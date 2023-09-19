@@ -1,10 +1,10 @@
 ## Jobster API
 
-#### Starter
+### Starter
 
 The starter is a copy of jobs-api final project, just with additional data.
 
-#### Setup
+### Setup
 
 - navigate to 06.5-jobster-api/starter
 - install dependencies
@@ -32,9 +32,9 @@ npm start
 
 - you should see "Server is listening ...." text
 
-#### Spring Cleaning
+### Spring Cleaning
 
-##### Remove Swagger
+### Remove Swagger
 
 - delete swagger.yaml file
 - remove these lines of code
@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 ```
 
-#### Remove API Limiter
+### Remove API Limiter
 
 - remove these lines of code
 
@@ -70,7 +70,7 @@ app.use(
 );
 ```
 
-#### Remove CORS
+### Remove CORS
 
 - we don't want external JS apps to access our API (only our front-end)
 - remove these lines of code
@@ -80,7 +80,7 @@ const cors = require("cors");
 app.use(cors());
 ```
 
-#### Package.json
+### Package.json
 
 - add "dev" script with nodemon
 - change engines to current version (in my case 16)
@@ -101,7 +101,7 @@ package.json
 
 - restart server with "npm run dev"
 
-##### Client Folder
+### Client Folder
 
 - let's explore client folder
 - open client folder
@@ -121,7 +121,7 @@ const customFetch = axios.create({
 - in CRA we can create build folder by running "npm run build"
 - that's the one we will use for our front-end
 
-##### Setup Front-End
+### Setup Front-End
 
 - require "path" module
 - setup express static (as first middleware)
@@ -161,7 +161,7 @@ app.use(errorHandlerMiddleware);
 - navigate to localhost:5000
 - clear local storage (if necessary)
 
-#### Modify User Model
+### Modify User Model
 
 - add following properties
 
@@ -183,7 +183,7 @@ lastName: {
 
 ```
 
-#### Modify Response in Register and Login
+### Modify Response in Register and Login
 
 - change the response structure in
   register and login controllers (just keep old StatusCodes)
@@ -204,7 +204,7 @@ res.status(StatusCodes.CREATED).json({
 
 - Login and Register Works Now :):):)
 
-#### Create Test User
+### Create Test User
 
 - test front-end request
 - in postman or front-end
@@ -231,7 +231,7 @@ res.status(StatusCodes.CREATED).json({
 
 ```
 
-#### Update User Functionality
+### Update User Functionality
 
 - import authenticateUser middleware
 - setup updateUser route (protected route)
@@ -297,7 +297,7 @@ const updateUser = async (req, res) => {
 
 - Why New Token?
 
-#### GOTCHA
+### GOTCHA
 
 - this.modifiedPaths();
 
@@ -309,7 +309,7 @@ UserSchema.pre("save", async function () {
 });
 ```
 
-#### Modify Job Model
+### Modify Job Model
 
 - add following properties
 
@@ -330,13 +330,13 @@ jobType: {
 
 - default property just for fun, values will be provided by front-end
 
-#### Setup Mock Data
+### Setup Mock Data
 
 - [Mockaroo](https://www.mockaroo.com/)
 - create mock-data.json (root)
 - provide test user id
 
-#### Populate DB
+### Populate DB
 
 - create populate.js
 
@@ -366,7 +366,7 @@ const start = async () => {
 start();
 ```
 
-#### Modify Get All Jobs
+### Modify Get All Jobs
 
 - latest mongoose version change
 
@@ -430,7 +430,7 @@ const getAllJobs = async (req, res) => {
 };
 ```
 
-#### Make Test User Read-Only
+### Make Test User Read-Only
 
 middleware/authentication.js
 
@@ -502,7 +502,7 @@ router
 module.exports = router;
 ```
 
-#### API Limiter
+### API Limiter
 
 routes/auth.js
 
@@ -537,7 +537,7 @@ app.set("trust proxy", 1);
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 ```
 
-#### Setup Stats Route
+### Setup Stats Route
 
 controllers/jobs
 
@@ -643,7 +643,7 @@ const showStats = async (req, res) => {
 };
 ```
 
-#### Deploy
+### Deploy
 
 - remove existing git repo
 
@@ -679,6 +679,8 @@ monthlyApplications = monthlyApplications
 - fix build folder (remove /build from client/.gitignore)
 - setup new github repo
 - deploy to render
-#   j o b s t e r - a p i - p r o  
- #   j o b s t e r - a p i - p r o  
- 
+  #   j o b s t e r - a p i - p r o 
+   
+   #   j o b s t e r - a p i - p r o 
+   
+   
